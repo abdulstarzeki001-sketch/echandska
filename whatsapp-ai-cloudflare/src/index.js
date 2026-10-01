@@ -191,7 +191,7 @@ async function askOpenAI({ userText, contactName, env }) {
     throw new Error("OPENAI_API_KEY is not configured.");
   }
 
-  const model = env.OPENAI_MODEL || "gpt-5-mini";
+  const model = env.OPENAI_MODEL || "gpt-5.6-luna";
   const instructions =
     env.BOT_SYSTEM_PROMPT ||
     "You are a concise, helpful WhatsApp customer-service assistant.";
