@@ -49,7 +49,7 @@ npx wrangler deploy
 
 ### Variables اختيارية
 
-- `OPENAI_MODEL` — الافتراضي: `gpt-5-mini`
+- `OPENAI_MODEL` — الافتراضي: `gpt-5.6-luna`
 - `META_GRAPH_VERSION` — الافتراضي: `v24.0`
 - `BOT_SYSTEM_PROMPT` — تعليمات المساعد.
 
