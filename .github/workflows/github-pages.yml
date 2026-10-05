@@ -36,14 +36,19 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Typecheck deployed apps
+        run: |
+          pnpm --filter @workspace/nafsam run typecheck
+          pnpm --filter @workspace/telegram-call run typecheck
+
       - name: Build main site
         env:
-          BASE_PATH: /ech-nafasm-ska/
+          BASE_PATH: /echandska/
         run: pnpm --filter @workspace/nafsam run build
 
       - name: Build Telegram app
         env:
-          BASE_PATH: /ech-nafasm-ska/telegram-call/
+          BASE_PATH: /echandska/telegram-call/
         run: pnpm --filter @workspace/telegram-call run build
 
       - name: Assemble GitHub Pages site
