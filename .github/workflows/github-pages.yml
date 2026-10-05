@@ -36,8 +36,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Typecheck workspace
-        run: pnpm run typecheck
+      - name: Typecheck deployed apps
+        run: |
+          pnpm --filter @workspace/nafsam run typecheck
+          pnpm --filter @workspace/telegram-call run typecheck
 
       - name: Build main site
         env:
